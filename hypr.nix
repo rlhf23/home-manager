@@ -11,6 +11,7 @@
     networkmanagerapplet
     rofi-wayland
     lxqt.lxqt-policykit
+    pcmanfm
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -195,13 +196,13 @@
 
       animations = {
         enabled = "yes";
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        bezier = "myBezier, 0.1, 0.7, 0.1, 1.0"; # New, faster bezier curve
         animation = [
-          "windows, 1, 5, myBezier"
-          "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
-          "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
+          "windows, 1, 3, myBezier" # Reduced from 5 to 3
+          "windowsOut, 1, 4, default, popin 80%" # Reduced from 7 to 4
+          "border, 1, 5, default" # Reduced from 10 to 5
+          "fade, 1, 4, default" # Reduced from 7 to 4
+          "workspaces, 1, 3, default" # Reduced from 6 to 3
         ];
       };
     };

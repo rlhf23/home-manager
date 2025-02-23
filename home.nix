@@ -25,6 +25,7 @@
       # # "Hello, world!" when run.
       # pkgs.hello
       wget
+      lazygit
       fzf
       ncdu
       helix
@@ -32,20 +33,8 @@
       bat
       nurl
 
-      #test
       pay-respects
-      vifm
       neovide
-
-      # hyprland
-      wl-clipboard
-      brightnessctl
-      pavucontrol
-      waybar
-      networkmanagerapplet
-      rofi-wayland
-      lxqt.lxqt-policykit
-      pcmanfm
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
