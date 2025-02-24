@@ -64,11 +64,15 @@ in {
             require("llm").prompt({ replace = false, service = "openai" })
           end, { desc = "Prompt with openai" })
 
+          vim.keymap.set("v", "<leader>,a", function()
+            require("llm").prompt({ replace = true, service = "openai" })
+          end, { desc = "Prompt while replacing with openai" })
+
           vim.keymap.set("n", "<leader>,,", function()
             require("llm").prompt({ replace = false, service = "anthropic" })
           end, { desc = "Prompt with sonnet" })
 
-          vim.keymap.set("v", "<leader>,.", function()
+          vim.keymap.set("v", "<leader>,,", function()
             require("llm").prompt({ replace = true, service = "anthropic" })
           end, { desc = "Prompt while replacing with sonnet" })
         '';

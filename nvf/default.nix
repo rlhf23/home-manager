@@ -8,11 +8,20 @@
       #customize
       undoFile.enable = true;
       searchCase = "ignore";
+      # inlay hints suggestion from "issues"
+      luaConfigPre = ''
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), { bufnr })
+      '';
       options = {
         tabstop = 2;
         shiftwidth = 2;
         expandtab = true;
         autoindent = true;
+      };
+
+      dashboard.startify = {
+        enable = true;
+        customHeader = ["don't panic"];
       };
 
       viAlias = false;
@@ -88,6 +97,8 @@
 
         # Fun
         cellular-automaton.enable = false;
+
+        rainbow-delimiters.enable = true;
       };
 
       statusline = {
@@ -166,7 +177,7 @@
         motion = {
           hop.enable = true;
           leap.enable = true;
-          precognition.enable = false; #ewwww
+          precognition.enable = false; # gave me cancer
         };
 
         images = {

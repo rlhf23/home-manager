@@ -2,13 +2,6 @@
   programs.nvf.settings.vim = {
     keymaps = [
       {
-        key = "<leader>wq";
-        mode = ["n"];
-        action = ":wq<CR>";
-        silent = true;
-        desc = "Save file and quit";
-      }
-      {
         key = "<A-j>";
         mode = ["n"];
         action = "<cmd>execute 'move .+' . v:count1<cr>==";
@@ -70,6 +63,27 @@
         action = ":Telescope find_files<CR>";
         silent = true;
         desc = "Find files with Telescope";
+      }
+      {
+        key = "[b";
+        mode = ["n"];
+        action = ":bprevious<CR>";
+        silent = true;
+        desc = "Previous buffer";
+      }
+      {
+        key = "]b";
+        mode = ["n"];
+        action = ":bnext<CR>";
+        silent = true;
+        desc = "Next buffer";
+      }
+      {
+        key = "<esc>";
+        mode = ["t"];
+        action = "<C-\\><C-n>";
+        silent = true;
+        desc = "Exit to normal mode in toggleterm";
       }
     ];
   };
