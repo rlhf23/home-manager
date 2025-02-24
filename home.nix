@@ -137,7 +137,7 @@
         append /usr/bin/env
         )
 
-        source afterglow.nu
+        source embark.nu
         source .pay-respects.nu
       '';
     };

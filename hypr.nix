@@ -12,7 +12,19 @@
     rofi-wayland
     lxqt.lxqt-policykit
     pcmanfm
+    feh
   ];
+  programs.wpaperd = {
+    enable = true;
+    settings = {
+      default = {
+        duration = "40m";
+        mode = "center";
+        sorting = "random";
+        path = "/home/share/Wallpapers";
+      };
+    };
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
@@ -28,6 +40,7 @@
         "waybar"
         "nm-applet --indicator & disown"
         "lxqt-policykit-agent"
+        "wpaperd -d"
       ];
 
       monitor = [
@@ -39,7 +52,7 @@
         gaps_out = 10;
         border_size = 2;
 
-        "col.active_border" = "rgba(00ffffee) rgba(8a2be2ee) 45deg";
+        "col.active_border" = "rgba(ff00ffee) rgba(00ff00ee) 45deg";
         "col.inactive_border" = "rgba(4b0082aa)";
 
         layout = "dwindle";
@@ -118,6 +131,7 @@
           "SUPER, F, exec,              firefox"
           "SUPER, E, exec,              pcmanfm"
           "CTRL ALT, W, exec,           pkill waybar || waybar"
+          "SUPER, N, exec,              wpaperctl next"
 
           "ALT, Tab,            focuscurrentorlast"
           "SUPER, M,            exit"
