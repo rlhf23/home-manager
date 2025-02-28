@@ -60,7 +60,7 @@
         lua.enable = true;
         zig.enable = false;
         python.enable = false;
-        typst.enable = true;
+        typst.enable = false;
         rust = {
           enable = true;
           crates.enable = true;

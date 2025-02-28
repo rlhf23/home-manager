@@ -36,13 +36,18 @@ in {
         setup = ''
           require('llm').setup{
             system_prompt_replace = "You should replace the code that you are sent, only following the comments. Do not talk at all. Only output valid code. Do not provide any backticks that surround the code. Never ever output backticks like this ```. Any comment that is asking you for something should be removed after you satisfy them. Other comments should left alone. Do not output backticks",
-            timeout_ms = 10000,
+            timeout_ms = 20000,
             services = {
               groq = {
                 url = "https://api.groq.com/openai/v1/chat/completions",
                 -- model = "llama-3.3-70b-versatile",
                 model = "deepseek-r1-distill-llama-70b",
                 api_key_name = "GROQ_API_KEY",
+              },
+              anthropic = {
+                  url = "https://api.anthropic.com/v1/messages",
+                  model = "claude-3-7-sonnet-latest",
+                  api_key_name = "ANTHROPIC_API_KEY",
               },
               openai = {
                 url = "https://api.openai.com/v1/chat/completions",

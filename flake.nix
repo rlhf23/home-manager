@@ -8,7 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvf.url = "github:notashelf/nvf";
+    nvf.url = "github:notashelf/nvf/bump-all-inputs";
   };
 
   outputs = {
@@ -31,6 +31,7 @@
         ./home.nix
         ./hypr.nix
         ./nvf
+        ./claude.nix
       ];
 
       # Optionally use extraSpecialArgs
