@@ -37,10 +37,11 @@
         "HYPRCURSOR_SIZE,24"
       ];
       exec-once = [
+        "wpaperd -d"
+        "lxqt-policykit-agent"
         "waybar"
         "nm-applet --indicator & disown"
-        "lxqt-policykit-agent"
-        "wpaperd -d"
+        "blueman-applet"
       ];
 
       monitor = [
@@ -128,7 +129,7 @@
           ",Print, exec,                screenshot"
           "SHIFT, Print, exec,          screenshot --full"
           "SUPER, Q, exec,              kitty"
-          "SUPER, F, exec,              firefox"
+          "SUPER, F, exec,              firefox-esr"
           "SUPER, E, exec,              pcmanfm"
           "CTRL ALT, W, exec,           pkill waybar || waybar"
           "SUPER, N, exec,              wpaperctl next"

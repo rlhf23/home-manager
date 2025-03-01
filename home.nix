@@ -41,7 +41,7 @@
 
       #test
       claude-code
-      nodejs
+      firefox-esr
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
@@ -163,8 +163,6 @@
       };
     };
     zoxide.enable = true;
-
-    firefox.enable = true;
 
     git = {
       enable = true;
