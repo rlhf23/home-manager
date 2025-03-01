@@ -14,13 +14,23 @@
     };
 
     # best way to talk to an llm, pairs fantastically with mind.nvim
+    # llm = buildVimPlugin {
+    #   name = "llm.nvim";
+    #   src = fetchFromGitHub {
+    #     owner = "melbaldove";
+    #     repo = "llm.nvim";
+    #     rev = "0cc5a0fdf2e6b613a2ab62c5b3d5b2c9eee5b07e";
+    #     hash = "sha256-mFi22n8vkVghjJXo5twoAFFqCI+To2vW0Ab/7cBzPTY=";
+    #   };
+    #   dependencies = with pkgs.vimPlugins; [plenary-nvim];
+    # };
     llm = buildVimPlugin {
       name = "llm.nvim";
       src = fetchFromGitHub {
-        owner = "melbaldove";
+        owner = "rlhf23";
         repo = "llm.nvim";
-        rev = "0cc5a0fdf2e6b613a2ab62c5b3d5b2c9eee5b07e";
-        hash = "sha256-mFi22n8vkVghjJXo5twoAFFqCI+To2vW0Ab/7cBzPTY=";
+        rev = "e60aa582176544990c1346f51cd23bbe69efd612";
+        hash = "sha256-NdWZT5sk83/VPqM3SczTTJoDxvSsKgEtYgUPGwvSvYg=";
       };
       dependencies = with pkgs.vimPlugins; [plenary-nvim];
     };

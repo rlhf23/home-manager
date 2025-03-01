@@ -211,13 +211,16 @@
 
       animations = {
         enabled = "yes";
-        bezier = "myBezier, 0.1, 0.7, 0.1, 1.0"; # New, faster bezier curve
+        bezier = [
+          "myBezier, 0.05, 0.5, 0.1, 1.0" # Even faster bezier curve
+          "quickOut, 0.1, 0.8, 0.1, 1.0"
+        ];
         animation = [
-          "windows, 1, 3, myBezier" # Reduced from 5 to 3
-          "windowsOut, 1, 4, default, popin 80%" # Reduced from 7 to 4
-          "border, 1, 5, default" # Reduced from 10 to 5
-          "fade, 1, 4, default" # Reduced from 7 to 4
-          "workspaces, 1, 3, default" # Reduced from 6 to 3
+          "windows, 1, 2, myBezier" # Reduced to 2
+          "windowsOut, 1, 2, quickOut, popin 80%" # Reduced to 2
+          "border, 1, 2, default" # Reduced to 2
+          "fade, 1, 2, quickOut" # Reduced to 2
+          "workspaces, 1, 2, quickOut" # Reduced to 2
         ];
       };
     };

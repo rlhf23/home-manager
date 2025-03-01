@@ -99,6 +99,7 @@
         size = 10.0
       '';
     };
+    sessionVariables.editor = "nvim";
   };
 
   # Home Manager can also manage your environment variables through
