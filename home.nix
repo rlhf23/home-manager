@@ -43,6 +43,7 @@
       claude-code
       librewolf
       mullvad-browser
+      brave
       mullvad
       protonvpn-gui
 

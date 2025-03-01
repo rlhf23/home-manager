@@ -29,8 +29,8 @@
       src = fetchFromGitHub {
         owner = "rlhf23";
         repo = "llm.nvim";
-        rev = "e60aa582176544990c1346f51cd23bbe69efd612";
-        hash = "sha256-NdWZT5sk83/VPqM3SczTTJoDxvSsKgEtYgUPGwvSvYg=";
+        rev = "f67ba3144145c6fe73c0cd5ffa75a1c941b08f3f";
+        hash = "sha256-4HUj3Ynio16lJ1kxjvKSxSYujMyDeHx8eK0+jzF78GE=";
       };
       dependencies = with pkgs.vimPlugins; [plenary-nvim];
     };
