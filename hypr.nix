@@ -129,7 +129,7 @@
           ",Print, exec,                screenshot"
           "SHIFT, Print, exec,          screenshot --full"
           "SUPER, Q, exec,              kitty"
-          "SUPER, F, exec,              firefox-esr"
+          "SUPER, F, exec,              mullvad-browser"
           "SUPER, E, exec,              pcmanfm"
           "CTRL ALT, W, exec,           pkill waybar || waybar"
           "SUPER, N, exec,              wpaperctl next"

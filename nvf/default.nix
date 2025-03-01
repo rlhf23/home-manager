@@ -59,7 +59,7 @@
         go.enable = true;
         lua.enable = true;
         zig.enable = false;
-        python.enable = false;
+        python.enable = true;
         typst.enable = false;
         rust = {
           enable = true;
