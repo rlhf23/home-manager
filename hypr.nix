@@ -13,6 +13,7 @@
     lxqt.lxqt-policykit
     pcmanfm
     feh
+    dunst
   ];
   services.wpaperd = {
     enable = true;
@@ -42,6 +43,7 @@
         "waybar"
         "nm-applet --indicator & disown"
         "blueman-applet"
+        "dunst"
       ];
 
       monitor = [
@@ -129,7 +131,7 @@
           ",Print, exec,                screenshot"
           "SHIFT, Print, exec,          screenshot --full"
           "SUPER, Q, exec,              kitty"
-          "SUPER, F, exec,              mullvad-browser"
+          "SUPER, F, exec,              librewolf"
           "SUPER, E, exec,              pcmanfm"
           "CTRL ALT, W, exec,           pkill waybar || waybar"
           "SUPER, N, exec,              wpaperctl next"
