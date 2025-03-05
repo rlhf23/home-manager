@@ -3,16 +3,16 @@
   pkgs,
   ...
 }: {
-  xdg.configFile = {
-    "waybar/config.jsonc" = {
-      source = ./waybar/config.jsonc; # Path relative to your home.nix
-      # onChange = "..."; # Optional: command to run when the file changes
-    };
-    "waybar/style.css" = {
-      source = ./waybar/style.css;
-    };
-    # Add any other waybar files you have
-  };
+  # xdg.configFile = {
+  #   "waybar/config.jsonc" = {
+  #     source = ./waybar/config.jsonc; # Path relative to your home.nix
+  #     onChange = "pkill waybar & hyprctl dispatch exec waybar"; # Optional: command to run when the file changes
+  #   };
+  #   "waybar/style.css" = {
+  #     source = ./waybar/style.css;
+  #   };
+  #   # Add any other waybar files you have
+  # };
   home.packages = with pkgs; [
     wl-clipboard
     brightnessctl

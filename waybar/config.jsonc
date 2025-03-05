@@ -13,7 +13,7 @@
 
     "modules-left": ["custom/smallspacer", "hyprland/workspaces", "custom/spacer", "mpris"],
     "modules-center": ["custom/padd", "custom/l_end", "custom/r_end", "hyprland/window", "custom/padd"],
-    "modules-right": ["custom/padd", "custom/l_end", "group/expand", "idle_inhibitor", "network", "group/expand-3", "group/expand-2", "memory", "cpu", "group/expand-4", "clock", "custom/notification", "custom/padd"],
+      "modules-right": ["custom/padd", "custom/l_end", "group/expand", "idle_inhibitor", "network", "group/expand-3", "group/expand-2", "memory", "cpu", "temperature", "group/expand-4", "clock", "custom/notification", "custom/padd"],
 
     "custom/smallspacer": {
         "format": " "
@@ -22,6 +22,17 @@
     "custom/spacer": {
         "format": "|"
     },
+
+      "temperature": {
+        "interval": 1,
+        "format": "{icon}",
+        "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+        "rotate": 180,
+        "critical-threshold": 65,
+        "tooltip-format": "{temperatureC}°C",
+        "format-critical": "<span color='#e78284'>{icon}</span>",
+        "max-length": 10
+      },
 
     "upower": {
       "native-path": "BAT0",
@@ -413,5 +424,7 @@
         "rotate": 0,
         "device": "pulseaudio",
         "scroll-step": 1
-    }
+      }
+  }
+
 }
