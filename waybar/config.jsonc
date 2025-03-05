@@ -25,6 +25,7 @@
 
       "temperature": {
         "interval": 1,
+        "thermal-zone": 2,
         "format": "{icon}",
         "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
         "rotate": 180,
