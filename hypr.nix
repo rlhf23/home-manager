@@ -3,6 +3,16 @@
   pkgs,
   ...
 }: {
+  xdg.configFile = {
+    "waybar/config.jsonc" = {
+      source = ./waybar/config.jsonc; # Path relative to your home.nix
+      # onChange = "..."; # Optional: command to run when the file changes
+    };
+    "waybar/style.css" = {
+      source = ./waybar/style.css;
+    };
+    # Add any other waybar files you have
+  };
   home.packages = with pkgs; [
     wl-clipboard
     brightnessctl
@@ -14,15 +24,39 @@
     pcmanfm
     feh
     dunst
+    upower
+    hypridle
   ];
-  services.wpaperd = {
-    enable = true;
-    settings = {
-      default = {
-        duration = "40m";
-        mode = "center";
-        sorting = "random";
-        path = "/home/share/Wallpapers";
+  services = {
+    wpaperd = {
+      enable = true;
+      settings = {
+        default = {
+          duration = "40m";
+          mode = "center";
+          sorting = "random";
+          path = "/home/share/Wallpapers";
+        };
+      };
+    };
+    hypridle = {
+      enable = true;
+      settings = {
+        general = {
+          lockCmd = ""; # No lock command
+        };
+        listener = [
+          {
+            timeout = 600; # 10 minutes
+            onTimeout = "hyprctl dispatch dpms off"; # Turn off screen
+            onResume = "hyprctl dispatch dpms on"; # Turn on screen
+          }
+          {
+            timeout = 900; # 15 minutes
+            onTimeout = "systemctl suspend"; # Suspend
+            onResume = ""; # No special command on resume
+          }
+        ];
       };
     };
   };
@@ -44,6 +78,7 @@
         "nm-applet --indicator & disown"
         "blueman-applet"
         "dunst"
+        "hypridle"
       ];
 
       monitor = [
@@ -64,7 +99,7 @@
 
       misc = {
         disable_splash_rendering = true;
-        force_default_wallpaper = 1;
+        # force_default_wallpaper = 1;
       };
 
       input = {

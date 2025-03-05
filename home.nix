@@ -35,6 +35,8 @@
       htop
       bat
       nurl
+      direnv
+      jq
 
       pay-respects
       neovide
