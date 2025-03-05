@@ -3,16 +3,16 @@
   pkgs,
   ...
 }: {
-  # xdg.configFile = {
-  #   "waybar/config.jsonc" = {
-  #     source = ./waybar/config.jsonc; # Path relative to your home.nix
-  #     onChange = "pkill waybar & hyprctl dispatch exec waybar"; # Optional: command to run when the file changes
-  #   };
-  #   "waybar/style.css" = {
-  #     source = ./waybar/style.css;
-  #   };
-  #   # Add any other waybar files you have
+  # home.file = {
+  #   ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
+  #   ".config/waybar/style.css".source = ./waybar/style.css;
   # };
+  home.file = {
+    # mkOutOfStoreSymlink needs absolute path
+    ".config/waybar/config.jsonc".source = config.lib.file.mkOutOfStoreSymlink /home/nix/.config/home-manager/waybar/config.jsonc;
+    ".config/waybar/style.css".source = config.lib.file.mkOutOfStoreSymlink /home/nix/.config/home-manager/waybar/style.css;
+  };
+
   home.packages = with pkgs; [
     wl-clipboard
     brightnessctl
@@ -43,18 +43,20 @@
       enable = true;
       settings = {
         general = {
-          lockCmd = ""; # No lock command
+          lock_cmd = ""; # No lock command
+          before_sleep_cmd = "dunstify \"Zzz\""; # command ran before sleep
+          after_sleep_cmd = "dunstify \"Awake!\""; # command ran after sleep
         };
         listener = [
           {
             timeout = 600; # 10 minutes
-            onTimeout = "hyprctl dispatch dpms off"; # Turn off screen
-            onResume = "hyprctl dispatch dpms on"; # Turn on screen
+            on-timeout = "hyprctl dispatch dpms off"; # Turn off screen
+            on-resume = "hyprctl dispatch dpms on"; # Turn on screen
           }
           {
             timeout = 900; # 15 minutes
-            onTimeout = "systemctl suspend"; # Suspend
-            onResume = ""; # No special command on resume
+            on-timeout = "systemctl suspend"; # Suspend
+            on-resume = ""; # No special command on resume
           }
         ];
       };
