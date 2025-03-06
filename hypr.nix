@@ -3,16 +3,13 @@
   pkgs,
   ...
 }: {
-  # home.file = {
-  #   ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
-  #   ".config/waybar/style.css".source = ./waybar/style.css;
-  # };
   home.file = {
     # mkOutOfStoreSymlink needs absolute path
     ".config/waybar/config.jsonc".source = config.lib.file.mkOutOfStoreSymlink /home/nix/.config/home-manager/waybar/config.jsonc;
     ".config/waybar/style.css".source = config.lib.file.mkOutOfStoreSymlink /home/nix/.config/home-manager/waybar/style.css;
+    # ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
+    # ".config/waybar/style.css".source = ./waybar/style.css;
   };
-
   home.packages = with pkgs; [
     wl-clipboard
     brightnessctl
@@ -32,7 +29,7 @@
       enable = true;
       settings = {
         default = {
-          duration = "40m";
+          duration = "90m";
           mode = "center";
           sorting = "random";
           path = "/home/share/Wallpapers";
@@ -207,15 +204,6 @@
         ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
         ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
-      ];
-
-      bindl = [
-        ",XF86AudioPlay,    exec, playerctl play-pause"
-        ",XF86AudioStop,    exec, playerctl pause"
-        ",XF86AudioPause,   exec, playerctl pause"
-        ",XF86AudioPrev,    exec, playerctl previous"
-        ",XF86AudioNext,    exec, playerctl next"
-        ",XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
       ];
 
       bindm = [

@@ -168,6 +168,11 @@ tooltip {
     padding-right: 6px;
 }
 
+#disk {
+    color: #8caaee;
+    margin: 2px 0px 0px 0px;
+}
+
 #idle_inhibitor {
     color: #24966e;
     background: @bar-bg;

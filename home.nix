@@ -49,10 +49,6 @@
       mullvad
       protonvpn-gui
 
-      # # It is sometimes useful to fine-tune packages, for example, by applying
-      # # overrides. You can do that directly here, just don't forget the
-      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-      # # fonts?
       nerd-fonts.droid-sans-mono
       nerd-fonts.jetbrains-mono
       nerd-fonts.fira-code
@@ -61,19 +57,7 @@
       nerd-fonts.noto
       nerd-fonts.commit-mono
       nerd-fonts.geist-mono
-      # can i consolidate these into a list?
-      # (nerdfonts.override {
-      #   fonts = [
-      #     "DroidSansMono"
-      #     "JetBrainsMono"
-      #     "FiraCode"
-      #     "Iosevka"
-      #     "Mononoki"
-      #     "Noto"
-      #     "CommitMono"
-      #     "GeistMono"
-      #   ];
-      # })
+
       # # You can also create simple shell scripts directly inside your
       # # configuration. For example, this adds a command 'my-hello' to your
       # # environment:
@@ -169,6 +153,7 @@
         };
       };
     };
+
     zoxide.enable = true;
 
     git = {
