@@ -78,6 +78,7 @@
         "blueman-applet"
         "dunst"
         "hypridle"
+        "protonvpn-app"
       ];
 
       monitor = [

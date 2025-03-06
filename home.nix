@@ -43,11 +43,12 @@
 
       #test
       claude-code
-      librewolf
+      # librewolf #refuses to build
       mullvad-browser
       brave
-      mullvad
       protonvpn-gui
+      proton-pass
+      bitwarden-desktop
 
       nerd-fonts.droid-sans-mono
       nerd-fonts.jetbrains-mono
