@@ -36,51 +36,17 @@ in {
         setup = ''
           require('llm').setup{
             system_prompt_replace = "You should replace the code that you are sent, only following the comments. Do not talk at all. Only output valid code. Do not provide any backticks that surround the code. Never ever output backticks like this ```. Any comment that is asking you for something should be removed after you satisfy them. Other comments should left alone. Do not output backticks",
-            timeout_ms = 20000,
-            services = {
-              groq = {
-                url = "https://api.groq.com/openai/v1/chat/completions",
-                -- model = "llama-3.3-70b-versatile",
-                model = "deepseek-r1-distill-llama-70b",
-                api_key_name = "GROQ_API_KEY",
-              },
-              anthropic = {
-                  url = "https://api.anthropic.com/v1/messages",
-                  model = "claude-3-7-sonnet-latest",
-                  api_key_name = "ANTHROPIC_API_KEY",
-              },
-              openai = {
-                url = "https://api.openai.com/v1/chat/completions",
-                -- model = "gpt-4o",
-                model = "gpt-4.5-preview",
-                api_key_name = "OPENAI_API_KEY",
-              }
-            }
           }
 
-          vim.keymap.set("n", "<leader>,m", function()
-            require("llm").create_llm_md()
-          end, { desc = "Create llm.md" })
+          vim.keymap.set("n", "<leader>,m", function() require("llm").create_llm_md() end, { desc = "Create llm.md" })
 
-          vim.keymap.set("n", "<leader>,q", function()
-            require("llm").prompt({ replace = false, service = "groq" })
-          end, { desc = "Prompt with groq" })
+          vim.keymap.set("n", "<leader>,q", function() require("llm").prompt({ replace = false, service = "groq" }) end, { desc = "Prompt with groq" })
 
-          vim.keymap.set("n", "<leader>,a", function()
-            require("llm").prompt({ replace = false, service = "openai" })
-          end, { desc = "Prompt with openai" })
+          vim.keymap.set("n", "<leader>,a", function() require("llm").prompt({ replace = false, service = "openai" }) end, { desc = "Prompt with openai" })
+          vim.keymap.set("v", "<leader>,a", function() require("llm").prompt({ replace = true, service = "openai" }) end, { desc = "Prompt while replacing with openai" })
 
-          vim.keymap.set("v", "<leader>,a", function()
-            require("llm").prompt({ replace = true, service = "openai" })
-          end, { desc = "Prompt while replacing with openai" })
-
-          vim.keymap.set("n", "<leader>,,", function()
-            require("llm").prompt({ replace = false, service = "anthropic" })
-          end, { desc = "Prompt with sonnet" })
-
-          vim.keymap.set("v", "<leader>,,", function()
-            require("llm").prompt({ replace = true, service = "anthropic" })
-          end, { desc = "Prompt while replacing with sonnet" })
+          vim.keymap.set("n", "<leader>,,", function() require("llm").prompt({ replace = false, service = "anthropic" }) end, { desc = "Prompt with sonnet" })
+          vim.keymap.set("v", "<leader>,,", function() require("llm").prompt({ replace = true, service = "anthropic" }) end, { desc = "Prompt while replacing with sonnet" })
         '';
       };
       codecompanion = {

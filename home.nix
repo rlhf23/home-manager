@@ -37,6 +37,7 @@
       nurl
       direnv
       jq
+      unzip
 
       pay-respects
       neovide
