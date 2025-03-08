@@ -29,8 +29,8 @@
       src = fetchFromGitHub {
         owner = "rlhf23";
         repo = "llm.nvim";
-        rev = "f67ba3144145c6fe73c0cd5ffa75a1c941b08f3f";
-        hash = "sha256-4HUj3Ynio16lJ1kxjvKSxSYujMyDeHx8eK0+jzF78GE=";
+        rev = "e05b4bcc3b39c9dcfa41027984022e788a1fdde8";
+        hash = "sha256-bJu+qycxGnqPNxgBmExY5PqXoAxO0TvLrjyaYHtHx24=";
       };
       dependencies = with pkgs.vimPlugins; [plenary-nvim];
     };
@@ -61,8 +61,8 @@
       src = fetchFromGitHub {
         owner = "olimorris";
         repo = "codecompanion.nvim";
-        rev = "317737145a221c62320cf47019075aa0a65d1695";
-        hash = "sha256-GBubkouKMxviG0LIGhGbL3nbxfXQFNWgr06J4vpZQS8=";
+        rev = "3639b11a3806f1c0c39b5b098d641d0f6b66f6ef";
+        hash = "sha256-i84baqNC6cw9ezvd3QT7LhBgpIaw/SmjMMG79aq4Qwc=";
       };
       dependencies = with pkgs.vimPlugins; [plenary-nvim];
       nvimSkipModule = [

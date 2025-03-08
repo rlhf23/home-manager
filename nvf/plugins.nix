@@ -24,6 +24,7 @@ in {
             file_types = { 'markdown', 'codecompanion' },
           })'';
       };
+      undotree.package = undotree;
 
       ## built plugins
       hmts = {
@@ -55,13 +56,13 @@ in {
           require('codecompanion').setup{
               strategies = {
                 agent = {
-                  adapter = "anthropic";
+                  adapter = "openai";
                 },
                 chat = {
-                  adapter = "anthropic",
+                  adapter = "openai",
                 },
                 inline = {
-                  adapter = "anthropic",
+                  adapter = "openai",
                 },
               },
             }

@@ -51,6 +51,13 @@
         desc = "Toggle Neo-tree";
       }
       {
+        key = "<leader>u";
+        mode = ["n"];
+        action = ":UndotreeToggle<CR>";
+        silent = true;
+        desc = "Toggle Undotree";
+      }
+      {
         key = "<leader>y";
         mode = ["n"];
         action = ''"*yy'';
