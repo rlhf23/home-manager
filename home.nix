@@ -44,6 +44,7 @@
 
       #test
       claude-code
+      nodejs
       # librewolf #refuses to build
       mullvad-browser
       brave
@@ -160,8 +161,8 @@
 
     git = {
       enable = true;
-      userEmail = "user@name.com";
-      userName = "user";
+      userEmail = "63261964+rlhf23@users.noreply.github.com ";
+      userName = "rlhf23";
     };
   };
 
