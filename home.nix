@@ -41,6 +41,7 @@
 
       pay-respects
       neovide
+      distrobox
 
       #test
       claude-code
