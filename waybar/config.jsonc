@@ -13,7 +13,7 @@
 
     "modules-left": ["custom/smallspacer", "hyprland/workspaces", "custom/spacer", "mpris"],
     "modules-center": ["custom/padd", "custom/l_end", "custom/r_end", "hyprland/window", "custom/padd"],
-      "modules-right": ["custom/padd", "custom/l_end", "group/expand", "idle_inhibitor", "network", "group/expand-3", "group/expand-2", "disk", "memory", "cpu", "temperature", "group/expand-4", "clock", "custom/notification", "custom/padd"],
+      "modules-right": ["custom/padd", "custom/l_end", "group/expand", "idle_inhibitor", "network", "group/expand-3", "group/expand-2", "custom/disk", "memory", "cpu", "temperature", "group/expand-4", "clock", "custom/notification", "custom/padd"],
 
     "custom/smallspacer": {
         "format": " "
@@ -23,10 +23,28 @@
         "format": "|"
     },
 
-    "disk": {
-      "interval": 30,
-      "format": "{percentage_free}%",
-      // "format": "{percentage_free}% free on {path}",
+    "custom/disk": {
+      "interval": 10,
+      "exec": "bash $HOME/.config/waybar/disk-usage.sh 2> /dev/null", // Script in resources folder
+      "return-type": "json",
+      "format": "{icon}",
+      "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+    },
+
+    "memory": {
+        "interval": 1,
+        "rotate": 270,
+        "format": "{icon}",
+        "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+        "tooltip-format": "{used:0.1f}GB / {total:0.1f}GB used",
+        "max-length": 10
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "{icon}",
+        "rotate": 180,
+        "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
     },
 
     "temperature": {
@@ -34,21 +52,13 @@
       "thermal-zone": 2,
       "format": "{icon}",
       "format-icons": ["󰝦","󰝦","󰝦","󰝦","󰝦","󰝦","󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
-      "rotate": 180,
+      "rotate": 90,
       "critical-threshold": 70,
       "tooltip-format": "{temperatureC}°C",
       "format-critical": "<span color='#e78284'>{icon}</span>",
       "max-length": 10
     },
 
-    "upower": {
-      "native-path": "BAT0",
-      "icon-size": 18,
-      "show-icon": false,
-      "format": "{}<span color='orange'>[{time}]</span>",
-      "on-click-right": "pkill waybar & hyprctl dispatch exec waybar"
-    },
-    
     "battery": {
         "states": {
             "good": 95,
@@ -65,6 +75,14 @@
         "max-length": 10
     },
 
+    "upower": {
+      "native-path": "BAT0",
+      "icon-size": 18,
+      "show-icon": false,
+      "format": "{}<span color='orange'>[{time}]</span>",
+      "on-click-right": "pkill waybar & hyprctl dispatch exec waybar"
+    },
+    
     "group/expand-4": {
         "orientation": "horizontal",
         "drawer": {
@@ -74,22 +92,6 @@
             "click-to-reveal": false
         },
         "modules": ["battery", "upower"]
-    },
-
-    "memory": {
-        "interval": 1,
-        "rotate": 270,
-        "format": "{icon}",
-        "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
-        "tooltip-format": "{used:0.1f}GB / {total:0.1f}GB used",
-        "max-length": 10
-    },
-
-    "cpu": {
-        "interval": 1,
-        "format": "{icon}",
-        "rotate": 90,
-        "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
     },
 
     "mpris": {

@@ -9,6 +9,7 @@
     ".config/waybar/style.css".source = config.lib.file.mkOutOfStoreSymlink /home/nix/.config/home-manager/waybar/style.css;
     # ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
     # ".config/waybar/style.css".source = ./waybar/style.css;
+    ".config/waybar/disk-usage.sh".source = ./waybar/disk-usage.sh;
   };
   home.packages = with pkgs; [
     wl-clipboard
@@ -29,10 +30,12 @@
       enable = true;
       settings = {
         default = {
-          duration = "90m";
-          mode = "center";
-          sorting = "random";
-          path = "/home/share/Wallpapers";
+          # duration = "90m";
+          # mode = "center";
+          # sorting = "random";
+          # path = "/home/share/Wallpapers";
+          path = "/home/share/Wallpapers/Tower-Night.png";
+          initial-transition = false;
         };
       };
     };
@@ -41,8 +44,8 @@
       settings = {
         general = {
           lock_cmd = ""; # No lock command
-          before_sleep_cmd = "dunstify \"Zzz\""; # command ran before sleep
-          after_sleep_cmd = "dunstify \"Awake!\""; # command ran after sleep
+          # before_sleep_cmd = "dunstify \"Zzz\""; # command ran before sleep
+          # after_sleep_cmd = "dunstify \"Awake!\""; # command ran after sleep
         };
         listener = [
           {

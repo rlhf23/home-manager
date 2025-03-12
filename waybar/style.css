@@ -150,11 +150,38 @@ tooltip {
     padding-right: 4px;
 }
 
+#custom-disk {
+    font-weight: normal;
+    font-size: 19px;
+    color: #8caaee;
+    background: rgba(23, 23, 23, 0.0);
+    opacity: 1;
+    margin: 0px 0px 0px 2px;
+    padding-left: 4px;
+    padding-right: 6px;
+}
+
+#memory {
+    font-weight: normal;
+    font-size: 19px;
+    color: #E4C9AF;
+    margin-bottom: 4px;
+}
+
+#cpu {
+    font-weight: normal;
+    font-size: 19px;
+    color: #915CAF;
+    /* margin: 6px 0px 0px -2px; */
+    margin: 0px 0px 0px 6px;
+}
+
 #temperature {
     font-weight: normal;
     font-size: 19px;
     color: #e57474;
-    margin: 2px 0px 0px 6px;
+    /* margin: 2px 0px 0px 6px; */
+    margin: 6px 0px 0px 2px;
 }
 
 #battery {
@@ -164,14 +191,8 @@ tooltip {
     background: rgba(23, 23, 23, 0.0);
     opacity: 1;
     margin: 2px 0px 0px 2px;
-    padding-left: 4px;
+    /* padding-left: 4px; */
     padding-right: 6px;
-}
-
-#disk {
-    color: #8caaee;
-    font-size: 12px;
-    margin: 2px 0px 0px 0px;
 }
 
 #idle_inhibitor {
@@ -207,13 +228,6 @@ tooltip {
     padding-right: 0px;
 }
 
-#cpu {
-    font-weight: normal;
-    font-size: 19px;
-    color: #915CAF;
-    margin: 6px 0px 0px -2px;
-}
-
 #custom-led {
     background: #427287;
     color: #FFFFFF;
@@ -227,13 +241,6 @@ tooltip {
 #custom-gpuinfo,
 #custom-keybindhint,
 #language,
-#memory {
-    font-weight: normal;
-    font-size: 19px;
-    color: #E4C9AF;
-    margin-bottom: 4px;
-}
-
 #mpris {
     color: white;
     animation: repeat;
