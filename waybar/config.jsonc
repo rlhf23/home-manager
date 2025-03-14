@@ -32,7 +32,7 @@
     },
 
     "memory": {
-        "interval": 1,
+        "interval": 10,
         "rotate": 270,
         "format": "{icon}",
         "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
@@ -41,14 +41,14 @@
     },
 
     "cpu": {
-        "interval": 1,
+        "interval": 10,
         "format": "{icon}",
         "rotate": 180,
         "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
     },
 
     "temperature": {
-      "interval": 5,
+      "interval": 15,
       "thermal-zone": 2,
       "format": "{icon}",
       "format-icons": ["󰝦","󰝦","󰝦","󰝦","󰝦","󰝦","󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
@@ -59,11 +59,19 @@
       "max-length": 10
     },
 
+    "upower": {
+      "native-path": "BAT0",
+      "icon-size": 18,
+      "show-icon": false,
+      "format": "{}<span color='orange'>[{time}]</span>",
+      "on-click-right": "pkill waybar & hyprctl dispatch exec waybar"
+    },
+    
     "battery": {
         "states": {
             "good": 95,
-            "warning": 20,
-            "critical": 10
+            "warning": 25,
+            "critical": 13
         },
         "format": "{icon}",
         "rotate": 0,
@@ -75,14 +83,6 @@
         "max-length": 10
     },
 
-    "upower": {
-      "native-path": "BAT0",
-      "icon-size": 18,
-      "show-icon": false,
-      "format": "{}<span color='orange'>[{time}]</span>",
-      "on-click-right": "pkill waybar & hyprctl dispatch exec waybar"
-    },
-    
     "group/expand-4": {
         "orientation": "horizontal",
         "drawer": {

@@ -48,6 +48,7 @@
       #test
       claude-code
       nodejs
+      windsurf
       # librewolf #refuses to build
       mullvad-browser
       brave

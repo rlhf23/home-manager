@@ -199,9 +199,9 @@ tooltip {
     color: #24966e;
     background: @bar-bg;
     opacity: 1;
-    margin: 4px 0px 4px 0px;
+    /* margin: 4px 0px 4px 0px; */
     padding-left: 4px;
-    padding-right: 4px;
+    padding-right: 10px;
 }
 
 #clock {
@@ -340,6 +340,9 @@ tooltip {
 
 #battery.critical:not(.charging) {
     color: red;
+}
+#battery.warning:not(.charging) {
+    color: yellow;
 }
 
 #taskbar {

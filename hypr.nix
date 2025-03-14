@@ -229,14 +229,14 @@
         };
 
         blur = {
-          enabled = true;
+          enabled = false;
           size = 3;
           passes = 3;
-          new_optimizations = "on";
+          new_optimizations = true;
           noise = 0.01;
           contrast = 0.9;
           brightness = 0.8;
-          popups = true;
+          popups = false;
         };
       };
 

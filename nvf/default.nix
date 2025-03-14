@@ -134,7 +134,7 @@
         };
       };
 
-      treesitter.context.enable = false; # not sure how I feel about this one
+      treesitter.context.enable = true; # not sure how I feel about this one
 
       binds = {
         whichKey.enable = true;
