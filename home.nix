@@ -44,6 +44,7 @@
 
       distrobox
       podman
+      docker-compose
 
       #test
       claude-code

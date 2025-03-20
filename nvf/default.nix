@@ -156,7 +156,7 @@
 
       dashboard = {
         dashboard-nvim.enable = false;
-        alpha.enable = true;
+        alpha.enable = false;
       };
 
       notify = {
@@ -230,6 +230,18 @@
       comments = {
         comment-nvim.enable = true;
       };
+
+      # assistant.codecompanion-nvim = {
+      #   enable = true;
+      #   setupOpts = {
+      #     strategies.chat = {
+      #       adapter = "anthropic";
+      #     };
+      #     strategies.inline = {
+      #       adapter = "anthropic";
+      #     };
+      #   };
+      # };
     };
   };
 }
