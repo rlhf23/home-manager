@@ -101,6 +101,17 @@
 
     # upower
     upower.enable = true;
+
+    # tailscale
+    tailscale.enable = true;
+
+    # syncthing
+    syncthing = {
+      enable = true;
+      user = "nix";
+      dataDir = "/home/nix/sync";
+      configDir = "/home/nix/sync/.config/syncthing";
+    };
   };
 
   hardware.bluetooth.enable = true; # tray icon for Bluetooth
