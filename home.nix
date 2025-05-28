@@ -19,7 +19,7 @@
     # You should not change this value, even if you update Home Manager. If you do
     # want to update the value, then make sure to first check the Home Manager
     # release notes.
-    stateVersion = "24.05"; # Please read the comment before changing.
+    stateVersion = "24.11"; # Please read the comment before changing.
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
@@ -31,13 +31,13 @@
       lazygit
       fzf
       ncdu
-      helix
       htop
       bat
       nurl
       direnv
       jq
       unzip
+      fish
 
       pay-respects
       neovide
@@ -47,15 +47,19 @@
       docker-compose
 
       #test
+      spice
       claude-code
       nodejs
       windsurf
-      # librewolf #refuses to build
+      librewolf
       mullvad-browser
+      mullvad
       brave
       protonvpn-gui
       proton-pass
       bitwarden-desktop
+      deluge
+      deluge-gtk
 
       nerd-fonts.droid-sans-mono
       nerd-fonts.jetbrains-mono
@@ -143,7 +147,7 @@
         append /usr/bin/env
         )
 
-        source embark.nu
+        source rebecca.nu
         source .pay-respects.nu
       '';
     };
@@ -169,6 +173,13 @@
       userEmail = "63261964+rlhf23@users.noreply.github.com ";
       userName = "rlhf23";
     };
+
+    mpv.enable = true;
+  };
+
+  # syncthing
+  services.syncthing = {
+    enable = true;
   };
 
   # Let Home Manager install and manage itself.

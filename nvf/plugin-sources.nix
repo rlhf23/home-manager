@@ -61,8 +61,8 @@
       src = fetchFromGitHub {
         owner = "olimorris";
         repo = "codecompanion.nvim";
-        rev = "3639b11a3806f1c0c39b5b098d641d0f6b66f6ef";
-        hash = "sha256-i84baqNC6cw9ezvd3QT7LhBgpIaw/SmjMMG79aq4Qwc=";
+        rev = "e114ae6a3168a183bafab3ee54473da88c59747e";
+        hash = "sha256-L77+V21pdBwovhSP+P6TTcQKisQSV7sfwaeu68t4vRw=";
       };
       dependencies = with pkgs.vimPlugins; [plenary-nvim];
       nvimSkipModule = [

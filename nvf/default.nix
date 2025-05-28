@@ -35,7 +35,6 @@
         trouble.enable = true;
         lspSignature.enable = true;
         otter-nvim.enable = true;
-        lsplines.enable = true;
       };
       languages = {
         enableLSP = true;
@@ -231,17 +230,18 @@
         comment-nvim.enable = true;
       };
 
-      # assistant.codecompanion-nvim = {
-      #   enable = true;
-      #   setupOpts = {
-      #     strategies.chat = {
-      #       adapter = "anthropic";
-      #     };
-      #     strategies.inline = {
-      #       adapter = "anthropic";
-      #     };
-      #   };
-      # };
+      assistant.codecompanion-nvim = {
+        enable = true;
+        setupOpts = {
+          opts.send_code = true;
+          strategies.chat = {
+            adapter = "anthropic";
+          };
+          strategies.inline = {
+            adapter = "anthropic";
+          };
+        };
+      };
     };
   };
 }

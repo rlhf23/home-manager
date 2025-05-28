@@ -37,6 +37,13 @@ in {
         setup = ''
           require('llm').setup{
             system_prompt_replace = "You should replace the code that you are sent, only following the comments. Do not talk at all. Only output valid code. Do not provide any backticks that surround the code. Never ever output backticks like this ```. Any comment that is asking you for something should be removed after you satisfy them. Other comments should left alone. Do not output backticks",
+          -- services = {
+          --   groq = {
+          --     url = "https://api.groq.com/openai/v1/chat/completions",
+          --     model = "llama-4-scout-17b-16e-instruct",
+          --     api_key_name = "GROQ_API_KEY",
+          --   },
+          -- },
           }
 
           vim.keymap.set("n", "<leader>,m", function() require("llm").create_llm_md() end, { desc = "Create llm.md" })
@@ -50,30 +57,30 @@ in {
           vim.keymap.set("v", "<leader>,,", function() require("llm").prompt({ replace = true, service = "anthropic" }) end, { desc = "Prompt while replacing with sonnet" })
         '';
       };
-      codecompanion = {
-        package = pluginSources.codecompanion;
-        setup = ''
-          require('codecompanion').setup{
-              strategies = {
-                agent = {
-                  adapter = "openai";
-                },
-                chat = {
-                  adapter = "openai",
-                },
-                inline = {
-                  adapter = "openai",
-                },
-              },
-            }
-          vim.keymap.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-          vim.keymap.set({ "n", "v" }, "<leader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
-          vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
-
-          -- Expand 'cc' into 'CodeCompanion' in the command line
-          vim.cmd([[cab cc CodeCompanion]])
-        '';
-      };
+      # codecompanion = {
+      #   package = pluginSources.codecompanion;
+      #   setup = ''
+      #     require('codecompanion').setup{
+      #         strategies = {
+      #           agent = {
+      #             adapter = "openai";
+      #           },
+      #           chat = {
+      #             adapter = "openai",
+      #           },
+      #           inline = {
+      #             adapter = "openai",
+      #           },
+      #         },
+      #       }
+      #     vim.keymap.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+      #     vim.keymap.set({ "n", "v" }, "<leader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+      #     vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+      #
+      #     -- Expand 'cc' into 'CodeCompanion' in the command line
+      #     vim.cmd([[cab cc CodeCompanion]])
+      #   '';
+      # };
     };
   };
 }

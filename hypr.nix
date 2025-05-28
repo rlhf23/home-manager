@@ -24,17 +24,17 @@
     dunst
     upower
     hypridle
+    grimblast
   ];
   services = {
     wpaperd = {
       enable = true;
       settings = {
         default = {
-          # duration = "90m";
-          # mode = "center";
-          # sorting = "random";
-          # path = "/home/share/Wallpapers";
-          path = "/home/share/Wallpapers/Tower-Night.png";
+          duration = "90m";
+          mode = "center";
+          sorting = "random";
+          path = "/home/share/Wallpapers";
           initial-transition = false;
         };
       };
@@ -159,15 +159,15 @@
         arr = [1 2 3 4 5 6 7];
       in
         [
-          "CTRL SHIFT, R, exec,         marble quit; marble"
+          # "CTRL SHIFT, R, exec,         marble quit; marble"
           # "SUPER, R, exec,              marble toggle launcher"
           "SUPER, R, exec,              rofi -show run"
-          "SUPER, Tab, exec,            marble eval \"launcher('h')\""
+          # "SUPER, Tab, exec,            marble eval \"launcher('h')\""
           # ",XF86PowerOff, exec,         marble toggle powermenu"
-          ",XF86Launch4, exec,          screenrecord"
-          "SHIFT, XF86Launch4, exec,    screenrecord --full"
-          ",Print, exec,                screenshot"
-          "SHIFT, Print, exec,          screenshot --full"
+          # ",XF86Launch4, exec,          screenrecord"
+          # "SHIFT, XF86Launch4, exec,    screenrecord --full"
+          "SUPER, P, exec,           grimblast save area"
+          ", Print, exec,               grimblast save full"
           "SUPER, Q, exec,              kitty"
           "SUPER, F, exec,              mullvad-browser"
           "SUPER, E, exec,              pcmanfm"
@@ -180,6 +180,9 @@
           "SUPER, V,            togglefloating"
           "SUPER, G,            fullscreen"
           "SUPER, W,            togglesplit"
+
+          "SUPER SHIFT, S,            movetoworkspace, special" # Move current window to special workspace
+          "SUPER, S,      togglespecialworkspace" # Toggle special workspace visibility
 
           (mvfocus "k" "u")
           (mvfocus "j" "d")
