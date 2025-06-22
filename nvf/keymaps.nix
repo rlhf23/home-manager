@@ -95,7 +95,7 @@
       {
         key = "<leader>a";
         mode = ["n"];
-        action = "CodeCompanionChat Toggle";
+        action = ":CodeCompanionChat Toggle<CR>";
         silent = true;
         desc = "CodeCompanionChat Toggle";
       }
