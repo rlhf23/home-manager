@@ -92,6 +92,13 @@
         silent = true;
         desc = "Exit to normal mode in toggleterm";
       }
+      {
+        key = "<leader>a";
+        mode = ["n"];
+        action = "CodeCompanionChat Toggle";
+        silent = true;
+        desc = "CodeCompanionChat Toggle";
+      }
     ];
   };
 }

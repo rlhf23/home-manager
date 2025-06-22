@@ -177,7 +177,10 @@
     mpv.enable = true;
   };
 
-  # syncthing
+  # syncthing in separate file
+  imports = [
+    ./syncthing.nix
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

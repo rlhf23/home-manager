@@ -31,7 +31,7 @@
       enable = true;
       settings = {
         default = {
-          duration = "90m";
+          # duration = "90m";
           mode = "center";
           sorting = "random";
           path = "/home/share/Wallpapers";
