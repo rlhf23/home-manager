@@ -178,6 +178,8 @@
           "SUPER, M,            exit"
           "SUPER, C,            killactive"
           "SUPER, V,            togglefloating"
+          "SUPER SHIFT, V,      pin" # Pin/unpin window (follow across workspaces)
+          "SUPER SHIFT, T,      toggleopaque" # Toggle window always on top
           "SUPER, G,            fullscreen"
           "SUPER, W,            togglesplit"
 
